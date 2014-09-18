@@ -8,15 +8,20 @@
 		if(!empty($_POST['filas']) && !empty($_POST['columnas'])){
 			$filas=$_POST['filas'];
 			$columnas=$_POST['columnas'];
-			echo "<table border='1' style='width:50%'>";
-			for($i=0; $i<$filas; $i++){
-				echo "<tr>";
-				for($j=0; $j<$columnas; $j++){
-					echo "<td height='50'></td>";
+			if($filas<=0 || $columnas<=0){
+				echo "Debes introducir numeros positivos";
+			}else{
+				echo "<table border='1' style='width:50%'>";
+				for($i=0; $i<$filas; $i++){
+					echo "<tr>";
+					for($j=0; $j<$columnas; $j++){
+						echo "<td height='50'></td>";
+					}
+					echo "</tr>";
 				}
-				echo "</tr>";
+				echo "</table>";
 			}
-			echo "</table>";
+			
 		}
 	}else{
 ?>
